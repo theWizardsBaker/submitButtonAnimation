@@ -33,11 +33,10 @@
 
 			var stopAnimation = function(options){
 					//take away animation
-					options.elm
-						 .val(options.defaultText)
-						 .removeClass(options.animClass)
-						 .prop('disabled', false)
-						 .css('min-width', '');
+					options.elm.val(options.defaultText)
+						   .removeClass(options.animClass)
+						   .prop('disabled', false)
+						   .css('min-width', '');
 
 					clearInterval(options.animation);
 				};
@@ -45,10 +44,10 @@
 			var toggleAnimate = function(options){
 		            if(options.action === 'start') { 
 		            	options.elm.trigger('animation.startSubmit'); 
-		            };
+		            }
 		            if(options.action=== 'stop') { 
 		            	options.elm.trigger('animation.stopSubmit'); 
-		            };
+		            }
 				};
 
 			return this.each(function(index, elm){

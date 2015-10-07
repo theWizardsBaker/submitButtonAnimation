@@ -3,15 +3,22 @@ Animates an html button with moving ellipses. Useful for longer-running actions 
 
 ![Alt text](example.png?raw=true "Example")
 
+````html
+
+<input id="test" type="button" value="SOME TEXT" />
+
+````
 
 ````javascript
 
-// add the animatinoToggle to all submit buttons
-$('input[type=submit]').submitAnimationToggle();
-
-// start animation
-$('input[type=submit]').submitAnimationToggle('start');
-// stop animation
-$('input[type=submit]').submitAnimationToggle('stop');
+$('input#test').submitAnimationToggle().on('click', function(){
+    var _this = $(this);
+	// start animation
+  	_this.submitAnimationToggle('start');
+  	setInterval(function () {
+  		//stop animation
+        _this.submitAnimationToggle('stop');
+	}, 5000);
+});
 
 ````
